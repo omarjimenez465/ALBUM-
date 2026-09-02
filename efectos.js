@@ -1,17 +1,24 @@
+// Selección de elementos
 const images = document.querySelectorAll('.gallery img');
 const overlay = document.querySelector('.overlay');
 const overlayBg = document.querySelector('.overlay-bg'); 
 const zoomed = document.getElementById('zoomed');
 const player = document.getElementById('player');
+const corazonesContainer = document.querySelector('.corazones');
 
+// Configuración de AudioContext y Analyser
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const source = audioCtx.createMediaElementSource(player);
 const analyser = audioCtx.createAnalyser();
 analyser.fftSize = 256;
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
-const corazonesContainer = document.querySelector('.corazones');
 
+// Conexiones de audio
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+
+// Función para crear corazones flotantes
 function crearCorazon() {
   const corazon = document.createElement('div');
   corazon.classList.add('corazon');
@@ -27,13 +34,13 @@ function crearCorazon() {
   }, 6000);
 }
 
+// Generar corazones cada medio segundo
 setInterval(crearCorazon, 500);
 
-source.connect(analyser);
-analyser.connect(audioCtx.destination);
-
+// Color inicial por defecto
 let currentColor = [255,0,100];
 
+// Animación del overlay según la música
 function animateOverlay() {
   analyser.getByteFrequencyData(dataArray);
   let bass = 0;
@@ -46,6 +53,7 @@ function animateOverlay() {
   if (!player.paused) requestAnimationFrame(animateOverlay);
 }
 
+// Evento al hacer clic en una imagen
 images.forEach(img => {
   img.addEventListener('click', () => {
     zoomed.src = img.src;
@@ -61,6 +69,7 @@ images.forEach(img => {
   });
 });
 
+// Evento al cerrar el overlay
 overlay.addEventListener('click', () => {
   overlay.classList.remove("active");
   zoomed.src = "";
