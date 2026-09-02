@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ALBUM ALIS</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <h1 class="titulo">Te amo muchisimo amor</h1>
+  
+  <h3 class="mensaje">
+    Talvez esto no sea algo tan impresionante, ni elaborado, pero tenia tiempo pensando en hacer algo asi,<br>
+    quiero que sepas lo mucho que te amo y lo orgulloso que estoy de ti, lo feliz que me haces al ser mi novia,<br>
+    y ya que llevo muchos dias volviendo a esto de programar creo que una buena forma de probar lo que se es haciendo algo para alguien que aprecio tanto.<br>
+    Se que muchas veces pasas por momentos dificiles, y tal vez al momento no me quieras contar, pero quiero que sepas que siempre estare de tu lado, apoyandote, y estando orgulloso de todo lo que haces dia con dias y todas las cosas que logras,<br>
+    te admiro demasiado y siempre tratare de demostrarte lo mucho que me importas.
+    Te amo demasiado
+  </h3>
+
+  <div class="gallery">
+    <img src="Fotos/foto1.jpeg" data-song="musicas/m1.mp4" data-colors="255,0,100" alt="Foto 1">
+    <img src="Fotos/foto2.jpeg" data-song="musicas/m2.mp4" data-colors="0,150,255" alt="Foto 2">
+    <img src="Fotos/foto3.jpeg" data-song="musicas/m3.mp4" data-colors="0,225,120" alt="Foto 3">
+    <img src="Fotos/foto4.jpeg" data-song="musicas/m4.mp4" data-colors="200,100,255" alt="Foto 4">
+    <img src="Fotos/foto5.jpeg" data-song="musicas/m5.mp4" data-colors="255,200,0" alt="Foto 5">
+    <img src="Fotos/foto6.jpeg" data-song="musicas/m6.mp4" data-colors="100,255,200" alt="Foto 6">
+    <img src="Fotos/foto7.jpeg" data-song="musicas/m7.mp4" data-colors="255,100,50" alt="Foto 7">
+    <img src="Fotos/foto13.jpeg" data-song="musicas/m8.mp4" data-colors="150,0,255" alt="Foto 8">
+    <img src="Fotos/foto9.jpeg" data-song="musicas/m9.mp4" data-colors="0,255,180" alt="Foto 9">
+    <img src="Fotos/foto10.jpeg" data-song="musicas/m10.mp4" data-colors="255,50,150" alt="Foto 10">
+    <img src="Fotos/foto11.jpeg" data-song="musicas/m11.mp4" data-colors="50,200,255" alt="Foto 11">
+    <img src="Fotos/foto12.jpeg" data-song="musicas/m12.mp4" data-colors="255,180,0" alt="Foto 12">
+  </div>
+
+  <div class="corazones"></div>
+
+  <!-- Overlay con fondo y foto -->
+  <div class="overlay">
+    <div class="overlay-bg"></div>   <!-- fondo difuminado -->
+    <img id="zoomed" src="" alt="">  <!-- foto ampliada -->
+  </div>
+
+  <!-- Reproductor oculto -->
+  <audio id="player"></audio>
+
+  <script src="efectos.js"></script>
+
+  <footer class="pie">
+    <p>💖 Para ti mi amor 💖</p>
+  </footer>
+  
+</body>
+</html>

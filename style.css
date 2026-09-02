@@ -1,0 +1,129 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+main{
+  flex: 1;
+}
+
+body {
+  background-image: url("fondo1.jpeg");
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  background-attachment: fixed;  
+}
+
+
+.mensaje {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  color: rgba(199, 9, 9, 0.721);
+  margin: 40px auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.titulo {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  color: rgba(198, 5, 34, 0.804);
+  margin-top: 20px;
+}
+
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Overlay general */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(8px); 
+  z-index: -1;               
+  animation: pulse 3s infinite; 
+}
+
+#zoomed {
+  max-width: 80%;
+  max-height: 80%;
+  z-index: 1; 
+}
+
+.corazones {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; /* que no bloqueen clics */
+  overflow: hidden;
+  z-index: 999; /* encima del fondo */
+}
+
+.corazon {
+  position: absolute;
+  font-size: 24px;
+  color: red;
+  animation: flotar 6s linear forwards;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%   { opacity: 0.8; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.pie {      
+  background-color: rgba(255, 192, 203, 0.8); /* rosa suave translúcido */
+  text-align: center;    /* texto centrado */
+  padding: 10px 0;       /* espacio interno */
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color: #000;           /* texto negro */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* sombra arriba */
+}
