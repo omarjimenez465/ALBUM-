@@ -10,7 +10,7 @@ main {
 }
 
 body {
-  background-image: url("fondo/fondo4.jpeg");
+  background-image: url("fondo4.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
   text-align: center;
   font-family: 'Dancing Script', cursive;
   font-size: 22px;
-  color: rgba(199, 9, 9, 0.721);
+  color: rgb(195, 26, 26);
   margin: 40px auto;
   max-width: 800px;
   line-height: 1.6;
@@ -31,7 +31,7 @@ body {
   text-align: center;
   font-family: 'Dancing Script', cursive;
   font-size: 40px;
-  color: rgba(198, 5, 34, 0.804);
+  color: rgba(255, 0, 38, 0.68);
   margin-top: 20px;
 }
 
