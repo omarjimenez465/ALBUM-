@@ -44,7 +44,7 @@ let currentColor = [255,0,100];
 function animateOverlay() {
   analyser.getByteFrequencyData(dataArray);
   let bass = 0;
-  for (let i = 0; i < 10; i++) bass += dataArray[i];
+  for (let i =  ​0; i < 10; i++) bass += dataArray[i];
   bass = bass / 10;
 
   overlayBg.style.backgroundColor = 
@@ -76,3 +76,25 @@ overlay.addEventListener('click', () => {
   player.pause();
   player.currentTime = 0;
 });
+
+// ===== CONTADOR DE ANIVERSARIO =====
+function calcularAniversario() {
+  const hoy = new Date();
+  let anio = hoy.getFullYear();
+  let mes = hoy.getMonth();
+
+  // Si hoy es 23 o ya pasó, pasa al siguiente mes
+  if (hoy.getDate() >= 23) {
+    mes++;
+    if (mes > 11) { mes =  ​0; anio++; }
+  }
+
+  const fechaAniv = new Date(anio, mes,  ​23);
+  const diff = Math.ceil((fechaAniv - hoy) / (1000 * 60 *  ​60 *  ​24));
+  const dias = diff ===  ​1 ? "1 día" : diff + " días";
+
+  document.getElementById("contador").textContent =
+    `Faltan ${dias} para nuestro aniversario 💕`;
+}
+
+calcularAniversario();

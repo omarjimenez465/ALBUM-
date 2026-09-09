@@ -142,3 +142,35 @@ body {
     font-size: 28px;
   }
 }
+
+.aniversario {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 15px;
+  border: 2px solid rgba(255, 105, 180, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+.aniversario h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  color: rgba(200, 30, 90, 0.85);
+}
+
+.contador {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: rgba(180, 20, 80, 0.9);
+  margin: 10px 0;
+}
+
+.sub {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 5px 0 0 0;
+}
