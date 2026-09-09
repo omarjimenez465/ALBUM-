@@ -84,9 +84,9 @@ function calcularAniversario() {
   let mes = hoy.getMonth();
 
   // Si hoy es 23 o ya pasó, pasa al siguiente mes
-  if (hoy.getDate() >= 23) {
+  if (hoy.getDate() >= 9) {
     mes++;
-    if (mes > 11) { mes =  ​0; anio++; }
+    if (mes > 8) { mes =  ​0; anio++; }
   }
 
   const fechaAniv = new Date(anio, mes,  ​23);

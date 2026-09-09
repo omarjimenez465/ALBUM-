@@ -147,8 +147,9 @@ body {
   max-width: 420px;
   margin: 40px auto;
   padding: 25px 20px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(4px);
+  background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url("fondoCL.jpeg");
+  background-size: cover;
+  background-position: center;
   border-radius: 15px;
   border: 2px solid rgba(255, 105, 180, 0.5);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
