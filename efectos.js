@@ -11,8 +11,7 @@ const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const source = audioCtx.createMediaElementSource(player);
 const analyser = audioCtx.createAnalyser();
 analyser.fftSize = 256;
-const bufferLength = analyser.frequencyBinCount;
-const dataArray = new Uint8Array(bufferLength);
+const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
 // Conexiones de audio
 source.connect(analyser);
@@ -23,18 +22,11 @@ function crearCorazon() {
   const corazon = document.createElement('div');
   corazon.classList.add('corazon');
   corazon.textContent = '💗'; 
-
   corazon.style.left = Math.random() * 100 + 'vw';
   corazon.style.fontSize = (20 + Math.random() * 20) + 'px';
-
   corazonesContainer.appendChild(corazon);
-
-  setTimeout(() => {
-    corazon.remove();
-  }, 6000);
+  setTimeout(() => corazon.remove(), 6000);
 }
-
-// Generar corazones cada medio segundo
 setInterval(crearCorazon, 500);
 
 // Color inicial por defecto
@@ -44,7 +36,7 @@ let currentColor = [255,0,100];
 function animateOverlay() {
   analyser.getByteFrequencyData(dataArray);
   let bass = 0;
-  for (let i =  ​0; i < 10; i++) bass += dataArray[i];
+  for (let i = 0; i < 10; i++) bass += dataArray[i];
   bass = bass / 10;
 
   overlayBg.style.backgroundColor = 
@@ -58,12 +50,9 @@ images.forEach(img => {
   img.addEventListener('click', () => {
     zoomed.src = img.src;
     overlay.classList.add("active");
-
     player.src = img.dataset.song;
     player.play();
-
     currentColor = img.dataset.colors.split(",").map(Number);
-
     audioCtx.resume();
     animateOverlay();
   });
@@ -78,19 +67,14 @@ overlay.addEventListener('click', () => {
 });
 
 // ===== CONTADOR DE ANIVERSARIO =====
-// ===== CONTADOR DE ANIVERSARIO =====
 function calcularAniversario() {
   const hoy = new Date();
   let anio = hoy.getFullYear();
   let mes = hoy.getMonth();
 
-  // Si hoy es 23 o ya pasó, pasa al siguiente mes
   if (hoy.getDate() >= 23) {
     mes++;
-    if (mes > 11) { 
-      mes = 0; 
-      anio++; 
-    }
+    if (mes > 11) { mes = 0; anio++; }
   }
 
   const fechaAniv = new Date(anio, mes, 23);
@@ -100,6 +84,4 @@ function calcularAniversario() {
   document.getElementById("contador").textContent =
     `Faltan ${dias} para nuestro aniversario de mes 💕`;
 }
-
 calcularAniversario();
-
