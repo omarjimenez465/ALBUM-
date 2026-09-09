@@ -78,23 +78,28 @@ overlay.addEventListener('click', () => {
 });
 
 // ===== CONTADOR DE ANIVERSARIO =====
+// ===== CONTADOR DE ANIVERSARIO =====
 function calcularAniversario() {
   const hoy = new Date();
   let anio = hoy.getFullYear();
   let mes = hoy.getMonth();
 
   // Si hoy es 23 o ya pasó, pasa al siguiente mes
-  if (hoy.getDate() >= 9) {
+  if (hoy.getDate() >= 23) {
     mes++;
-    if (mes > 8) { mes =  ​0; anio++; }
+    if (mes > 11) { 
+      mes = 0; 
+      anio++; 
+    }
   }
 
-  const fechaAniv = new Date(anio, mes,  ​23);
-  const diff = Math.ceil((fechaAniv - hoy) / (1000 * 60 *  ​60 *  ​24));
-  const dias = diff ===  ​1 ? "1 día" : diff + " días";
+  const fechaAniv = new Date(anio, mes, 23);
+  const diff = Math.ceil((fechaAniv - hoy) / (1000 * 60 * 60 * 24));
+  const dias = diff === 1 ? "1 día" : diff + " días";
 
   document.getElementById("contador").textContent =
-    `Faltan ${dias} para nuestro aniversario 💕`;
+    `Faltan ${dias} para nuestro aniversario de mes 💕`;
 }
 
 calcularAniversario();
+
